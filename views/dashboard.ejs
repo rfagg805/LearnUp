@@ -308,7 +308,7 @@
 
         document.getElementById('enterRoomButton').classList.remove("disabled")
         document.getElementById('enterRoom').setAttribute("action", "/room/" + room)
-        document.getElementById("meetingurl").setAttribute("value", "http://localhost:8000/room/" + room)
+        document.getElementById("meetingurl").setAttribute("value", "http://localhost:8000/room/" + room )
         socket.emit('create', room)
     }
 
