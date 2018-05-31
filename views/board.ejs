@@ -315,7 +315,7 @@
                     $(`#${set.name}`).html('')
                     set.tiles.forEach((tile) => {
                         $(`#${set.name}`).append(
-                            `<div class='tile-source draggable ib' id=${tile.text}>
+                            `<div class='tile-source draggable ib' id=${tile._id}>
                         <p class=${tile.color}>
                     ${tile.text}
                         </p >
