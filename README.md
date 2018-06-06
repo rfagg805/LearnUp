@@ -1,9 +1,15 @@
-### README
-# NodeVersion: 8.9.4
+# README
+## NodeVersion: 8.9.4
+
+<!-- Can you see comments? -->
+# 1
+## 2
+### 3
+
 
 -----------------------
 ## Sprint Timelime: 5/28/2018 - 6/8/2018
-# Meeting, 6/8/2018
+### Meeting, 6/8/2018
 
 - Sounds: Ingrid
 - Snapping: Daniel
@@ -11,8 +17,8 @@
 - Terminating Room: Lisa
 - Version Control: Jonathan
 
-# Accomplishments
-# Questions
+### Accomplishments
+### Questions
 
 -----------------------
 # LearnUpProject 4/18/18 updated
