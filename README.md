@@ -1,3 +1,21 @@
+README
+NodeVersion: 8.9.4
+
+-----------------------
+Sprint Timelime: 5/28/2018 - 6/8/2018
+Meeting, 6/8/2018
+
+Sounds: Ingrid
+Snapping: Daniel
+Layout: Emily, Maria
+Terminating Room: Lisa
+Version Control: Jonathan
+
+Questions
+
+
+
+-----------------------
 # LearnUpProject 4/18/18 updated
 ## Changes for forget pw
 
