@@ -90,7 +90,7 @@ const Sidetwo = mongoose.model('Sidetwo');
 
 function addTiles(tiles) {
   const {
-    starstop, starsleft, starsright, starsbottom, dipper, crescent, earth,
+    starstop, starsleft, starsright, starsright2, starsbottom, dipper, dipper2, crescent, earth,
   } = tilesSideOne.sideone;
 
   const {
@@ -99,10 +99,12 @@ function addTiles(tiles) {
 
   Sideone.create({
     starstop,
-    starsright,
+	starsright,
+	starsright2,
     starsleft,
     starsbottom,
-    dipper,
+	dipper,
+	dipper2,
     crescent,
     earth,
   })

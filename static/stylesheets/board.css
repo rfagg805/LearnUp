@@ -93,51 +93,89 @@ p {
 
 .frontboard {
   display: grid;
-  grid-template-columns: 10% 10% 60% 10% 10%;
-  grid-template-rows: 8rem 20rem 5rem;
-  width: 67rem;
+  grid-template-columns: 10% 10% 60% 5% 15%;
+  grid-template-rows: 7rem 25rem 10rem;
+  width: 68rem;
   border-radius: 40px;
   border: 10px solid black;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 #starstop {
   grid-column: 1/6;
   width: 100%;
-  height: 8rem;
+  height: 7rem;
+  /* border: 2px solid red; */
 }
 
 #starsleft {
   grid-column: 1/2;
-  width: 90%;
-  height: 30rem;
+  width: 70%;
+  height: 15rem;
+  /* border: 2px solid blue; */
+  position: relative;
+  top: 40px;
+  text-align: center;
+
 }
 
 #centerone {
   grid-column: 2/4;
   width: 100%;
   height: 30rem;
+  /* border: 2px solid lightgrey; */
 }
 
 #crescent {
-  width: 15%;
+  width: 12%;
   display: inline-block;
+  height: 15rem;
+  /* border: 2px solid pink; */
+  margin-right: 20px;
 }
 
 #dipper {
-  width: 50%;
+  width: 10%;
   display: inline-block;
+  height: 15rem;
   vertical-align: top;
+  /* border: 2px solid lightseagreen; */
 }
+
+#dipper2 {
+	width: 35%;
+	display: inline-block;
+	vertical-align: top;
+	/* border: 2px solid lightskyblue; */
+	margin: 70px 0px 0px 20px;
+  }
 
 #earth {
   text-align: center;
+  /* border: 2px solid olivedrab; */
+  width: 65%;
+  height: 10rem;
+  margin-top: 30px;
+  margin-left: 80px;
+}
+#centertwo {
+	grid-column: 5/6;
+	width: 100%;
+	height: 30rem;
+	/* border: 2px solid lightgrey; */
+  }
+#starsright {
+  width: 40%;
+  height: 20rem;
+  /* border: 2px solid orange; */
+  text-align: center;
 }
 
-#starsright {
-  grid-column: 4/6;
-  width: 55%;
-  height: 30rem;
+#starsright2 {
+	width: 40%;
+	height: 20rem;
+	text-align: center;
+	/* border: 2px solid rgb(0, 255, 0); */
 }
 
 #starsbottom {
@@ -146,6 +184,10 @@ p {
   height: 5rem;
   line-height: 5rem;
   vertical-align: middle;
+  text-align: center;
+  /* border: 2px solid yellow; */
+  color: navy;
+  margin-top: 70px;
 }
 
 .backboard {
@@ -188,6 +230,89 @@ p {
 #sidetwo {
   /* visibility: hidden; */
 }
+
+
+/* Detailed tile positioning */
+#or35 {
+	position: relative;
+	top: 0px;
+	left: 20px;
+	padding-bottom: 2px;
+}
+#ur37, #e41 {
+	position: relative;
+	top: 0px;
+	left: 10px;
+}
+#ir38, #a42 {
+	position: relative;
+	top: 0px;
+	left: 25px;
+}
+#u43 {
+	position: relative;
+	top: 0px;
+	left: 40px;
+}
+#er39 {
+	position: relative;
+	top: 0px;
+	left: 50px;
+}
+#o44 {
+	position: relative;
+	top: 0px;
+	left: 60px;
+}
+#oo49 {
+	position: relative;
+	top: 5px;
+	left: 140px;
+}
+#au50, #aw51 {
+	position: relative;
+	top: 73px;
+	right: 10px;
+	margin-right: 15px;
+}
+#ea52, #ui59 {
+	position: relative;
+	top: 15px;
+}
+#ie67 {
+	position: relative;
+	top: 15px;
+}
+#igh60 {
+	position: relative;
+	top: 15px;
+	left: 12px;
+}
+#y61 {
+	position: relative;
+	top: 63px;
+	right: 20px;
+	margin-right: 15px;
+}
+#ei62, #ey63, #eigh64, #eu65 {
+	position: relative;
+	top: 83px;
+	right: 30px;
+	margin-right: 13px;
+}
+#ew66 {
+	position: relative;
+	top: 65px;
+	right: 40px;
+}
+#ie67 {
+	position: relative;
+	top: -32px;
+	left: 190px;
+}
+
+/* End of detailed tile positioning */
+
 
 #light {
   display: block;

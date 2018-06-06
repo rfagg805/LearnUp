@@ -18,9 +18,11 @@ const SideOneSchema = new mongoose.Schema(
     // <--- SET MODEL NAME & DESCRIBE MODEL'S SCHEMA
     starstop: [{ text: String, color: String }],
     starsleft: [{ text: String, color: String }],
-    starsright: [{ text: String, color: String }],
+	starsright: [{ text: String, color: String }],
+	starsright2: [{ text: String, color: String }],
     starsbottom: [{ text: String, color: String }],
-    dipper: [{ text: String, color: String }],
+	dipper: [{ text: String, color: String }],
+	dipper2: [{ text: String, color: String }],
     crescent: [{ text: String, color: String }],
     earth: [{ text: String, color: String }],
   },

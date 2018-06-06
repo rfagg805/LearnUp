@@ -154,7 +154,7 @@
                             clone.id = original.id + (i + 1);
                         }
                     } else {
-                        document.getElementsByClassName('section')[5].appendChild(clone);
+                        document.getElementsByClassName('section')[7].appendChild(clone);
                         list = document.getElementsByClassName('cloned-tile');
                         for (var i = 1; i <= list.length; i++) {
                             clone.id = original.id + (i + 1);
@@ -194,7 +194,7 @@
                         clone.id = target.id + (i + 1);
                     }
                 } else {
-                    document.getElementsByClassName('section')[5].appendChild(clone);
+                    document.getElementsByClassName('section')[7].appendChild(clone);
                     list = document.getElementsByClassName('cloned-tile');
                     for (var i = 1; i <= list.length; i++) {
                         clone.id = target.id + (i + 1);
@@ -276,23 +276,26 @@
 
             function setBoard() {
                 $.get('http://localhost:8000/tiles').then((tiles) => {
-                    const { earth, starstop, starsleft, starsright, starsbottom, dipper, crescent } = tiles.sideOne[0]
+                    const { earth, starstop, starsleft, starsright, starsright2, starsbottom, dipper, dipper2, crescent } = tiles.sideOne[0]
                     const { prefixes, endingsright, endingsbottom, roots } = tiles.sideTwo[0]
 
                     const tileSets = [
                         { tiles: earth, name: "earth" },
                         { tiles: starstop, name: "starstop" },
                         { tiles: starsleft, name: "starsleft" },
-                        { tiles: starsright, name: "starsright" },
+						{ tiles: starsright, name: "starsright" },
+						{ tiles: starsright2, name: "starsright2" },
                         { tiles: starsbottom, name: "starsbottom" },
-                        { tiles: dipper, name: "dipper" },
+						{ tiles: dipper, name: "dipper" },
+						{ tiles: dipper2, name: "dipper2" },
                         { tiles: crescent, name: "crescent" },
                         { tiles: prefixes, name: "prefixes" },
                         { tiles: endingsright, name: "endingsright" },
                         { tiles: endingsbottom, name: "endingsbottom" },
                         { tiles: roots, name: "roots" }
                     ]
-                    renderSet(tileSets)
+					renderSet(tileSets);
+					uniqueTileID();
 
                     setUpHoverEvent();
 
@@ -308,19 +311,30 @@
                     })
 
                 });
-            }
+			}
+
+			// get every tile with the class 'tile-source' and make the id unique
+			// ensure correct tile selection
+			function uniqueTileID(){
+				for (var i = 1; i < 142; i++){
+					$('.tile-source').each(function(){
+						var tileID = $(this).attr('id');
+						$(this).attr('id', tileID + i++);
+					})
+				}
+			}
 
             function renderSet(tileSets) {
                 tileSets.forEach((set) => {
                     $(`#${set.name}`).html('')
                     set.tiles.forEach((tile) => {
                         $(`#${set.name}`).append(
-                            `<div class='tile-source draggable ib' id=${tile._id}>
+                            `<div class='tile-source draggable ib' id=${tile.text}>
                         <p class=${tile.color}>
                     ${tile.text}
                         </p >
                         </div >`
-                        )
+						)
                     })
                 });
             }
@@ -376,34 +390,34 @@
                  time out 
             ================ */
 
-            attachEvent(window, 'load', function () {
-                // 30 seconds is for test!
-                var idleSeconds = 30;
-                var idleTimer;
-                function resetTimer() {
-                    clearTimeout(idleTimer);
-                    idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
-                }
-                attachEvent(document.body, 'mousemove', resetTimer);
-                attachEvent(document.body, 'keydown', resetTimer);
-                attachEvent(document.body, 'click', resetTimer);
+            // attachEvent(window, 'load', function () {
+            //     // 30 seconds is for test!
+            //     var idleSeconds = 30;
+            //     var idleTimer;
+            //     function resetTimer() {
+            //         clearTimeout(idleTimer);
+            //         idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
+            //     }
+            //     attachEvent(document.body, 'mousemove', resetTimer);
+            //     attachEvent(document.body, 'keydown', resetTimer);
+            //     attachEvent(document.body, 'click', resetTimer);
 
-                resetTimer(); 
-            });
+            //     resetTimer(); 
+            // });
 
-            function whenUserIdle() {
-                alert("Your session is out");
-                window.location.href = '/';
-            }
+            // function whenUserIdle() {
+            //     alert("Your session is out");
+            //     window.location.href = '/';
+            // }
 
-            function attachEvent(obj, evt, fnc, useCapture) {
-                if (obj.addEventListener) {
-                    obj.addEventListener(evt, fnc, !!useCapture);
-                    return true;
-                } else if (obj.attachEvent) {
-                    return obj.attachEvent("on" + evt, fnc);
-                }
-            }
+            // function attachEvent(obj, evt, fnc, useCapture) {
+            //     if (obj.addEventListener) {
+            //         obj.addEventListener(evt, fnc, !!useCapture);
+            //         return true;
+            //     } else if (obj.attachEvent) {
+            //         return obj.attachEvent("on" + evt, fnc);
+            //     }
+            // }
 
         });
 
@@ -462,12 +476,18 @@
                         <div id="crescent">
                         </div>
                         <div id="dipper">
+						</div>
+						<div id="dipper2">
                         </div>
                         <div id="earth">
                         </div>
-                    </div>
-                    <div class="section" id="starsright">
-                    </div>
+					</div>
+					<div class="section" id="centertwo">
+						<div class="section" id="starsright">
+						</div>
+						<div class="section" id="starsright2">
+						</div>
+					</div>
                     <div class="section" id="starsbottom">
                     </div>
                 </div>
