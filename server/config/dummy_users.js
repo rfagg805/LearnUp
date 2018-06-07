@@ -14,6 +14,11 @@ const users = [
     password: 'Testing234535324',
     admin: 7,
   },
+  {
+    email: 'admin@email.com',
+    password: 'password123',
+    admin: 9,
+  }
 ];
 
 module.exports = users;
