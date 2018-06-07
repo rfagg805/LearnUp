@@ -287,7 +287,6 @@
 <script type="text/javascript">
     document.getElementById('genRoomButton').addEventListener('click', createRoom)
     var deleteButtons = document.querySelectorAll('.deleteuser');
-    var socket = io.connect()
 
     for (var i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('click', deleteClicked)

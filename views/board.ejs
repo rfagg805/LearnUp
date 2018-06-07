@@ -376,34 +376,49 @@
                  time out 
             ================ */
 
-            attachEvent(window, 'load', function () {
-                // 30 seconds is for test!
-                var idleSeconds = 30;
-                var idleTimer;
-                function resetTimer() {
-                    clearTimeout(idleTimer);
-                    idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
-                }
-                attachEvent(document.body, 'mousemove', resetTimer);
-                attachEvent(document.body, 'keydown', resetTimer);
-                attachEvent(document.body, 'click', resetTimer);
+            // attachEvent(window, 'load', function () {
+            //     // 30 seconds is for test!
+            //     var idleSeconds = 30;
+            //     var idleTimer;
+            //     function resetTimer() {
+            //         clearTimeout(idleTimer);
+            //         idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
+            //     }
+            //     attachEvent(document.body, 'mousemove', resetTimer);
+            //     attachEvent(document.body, 'keydown', resetTimer);
+            //     attachEvent(document.body, 'click', resetTimer);
 
-                resetTimer(); 
-            });
+            //     resetTimer(); 
+            // });
 
-            function whenUserIdle() {
-                alert("Your session is out");
-                window.location.href = '/';
-            }
+            // function whenUserIdle() {
+            //     alert("Your session is out");
+            //     window.location.href = '/';
+            // }
 
-            function attachEvent(obj, evt, fnc, useCapture) {
-                if (obj.addEventListener) {
-                    obj.addEventListener(evt, fnc, !!useCapture);
-                    return true;
-                } else if (obj.attachEvent) {
-                    return obj.attachEvent("on" + evt, fnc);
-                }
-            }
+            // function attachEvent(obj, evt, fnc, useCapture) {
+            //     if (obj.addEventListener) {
+            //         obj.addEventListener(evt, fnc, !!useCapture);
+            //         return true;
+            //     } else if (obj.attachEvent) {
+            //         return obj.attachEvent("on" + evt, fnc);
+            //     }
+            // }
+
+            /* ================
+                 Sound 
+            ================ */
+
+            $(document).on('click',function(event){
+                console.log('id',event.target.innerText);
+                var id = event.target.innerText;
+                socket.emit('clicked',{id: id})
+            })
+
+            socket.on('clicked',(data)=>{
+                console.log('sending back from server data',data.id)
+                $(data.id).trigger('click');
+            })
 
         });
 
