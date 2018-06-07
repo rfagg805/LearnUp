@@ -31,9 +31,9 @@
       { "text": "ant", "color": "red" }
     ],
     "endingsbottom": [
-      { "text": "ance", "color": "red" },
+      { "text": "ate", "color": "red" },
       { "text": "age", "color": "red" },
-      { "text": "ate", "color": "red" }
+      { "text": "ance", "color": "red" }
     ],
     "roots": [
       { "text": "cept", "color": "white" },
