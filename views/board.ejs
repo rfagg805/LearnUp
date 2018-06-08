@@ -371,8 +371,8 @@
             ================ */
 
             attachEvent(window, 'load', function () {
-                // 300 seconds is for test!
-                var idleSeconds = 300;
+                // 30 seconds is for test!
+                var idleSeconds = 30;
                 var idleTimer;
                 function resetTimer() {
                     clearTimeout(idleTimer);
@@ -398,6 +398,22 @@
                     return obj.attachEvent("on" + evt, fnc);
                 }
             }
+
+
+            /* ================
+                 Sound 
+            ================ */
+
+            $(document).on('click',function(event){
+                console.log('id',event.target.innerText);
+                var id = event.target.innerText;
+                socket.emit('clicked',{id: id})
+            })
+
+            socket.on('clicked',(data)=>{
+                console.log('sending back from server data',data.id)
+                $(data.id).trigger('click');
+            })
 
         });
 

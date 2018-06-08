@@ -8,6 +8,8 @@
 // FOR SESSION STORE configs below REFER TO: https://github.com/expressjs/session#session-store-implementation
 const session = require('express-session');
 
+var player = require('play-sound')(opts = {})
+
 // REQUIRE AND DECLARE A SESSION STORE:
 const MongoStore = require('connect-mongo')(session);
 
@@ -215,5 +217,10 @@ io.sockets.on('connection', (socket) => {
     io.emit('user disconnected');
   });
 
+  socket.on('clicked', function (data) {
+    console.log('this is the tile id', data.id);
+    player.play(`${data.id}.mp3`)
+    socket.broadcast.to(data.room).emit('clicked', data);
+});
 
 });
