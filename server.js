@@ -213,7 +213,7 @@ io.sockets.on('connection', (socket) => {
   });
 
   socket.on('terminate', (data) => {
-    socket.broadcast.to(data.room).emit('terminate_by_teacher');
+    socket.broadcast.emit('terminate_by_teacher');
     io.emit('user disconnected');
   });
 

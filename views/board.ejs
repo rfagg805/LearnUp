@@ -349,24 +349,18 @@
             OFFLINE (RED LIGHT)
             ================ */
 
-            function terminateButtonPressed() {
-                $("#class_over").html("Class is over, thank you!");
-                $("#teacher_light").toggleClass('online');
-                $("#teacher_light").addClass('offline');
-            }
-
             $("#terminate").click(() => {
                 socket.emit("terminate", {
                     room: roomName
                 })
-                terminateButtonPressed()
             });
 
             socket.on("terminate_by_teacher", function () {
-                terminateButtonPressed()
+                console.log("teacher has terminated the room");
+                window.location.replace("http://localhost:8000/end");
             });
 
-            socket.on("user disconnected", function () {
+            socket.on("user disconnected", function() {
                 console.log("user disconnected from client side");
                 $("#student_light").removeClass('not_paying_attention');
                 $("#student_light").addClass('offline');
@@ -376,34 +370,35 @@
                  time out 
             ================ */
 
-            // attachEvent(window, 'load', function () {
-            //     // 30 seconds is for test!
-            //     var idleSeconds = 30;
-            //     var idleTimer;
-            //     function resetTimer() {
-            //         clearTimeout(idleTimer);
-            //         idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
-            //     }
-            //     attachEvent(document.body, 'mousemove', resetTimer);
-            //     attachEvent(document.body, 'keydown', resetTimer);
-            //     attachEvent(document.body, 'click', resetTimer);
+            attachEvent(window, 'load', function () {
+                // 30 seconds is for test!
+                var idleSeconds = 30;
+                var idleTimer;
+                function resetTimer() {
+                    clearTimeout(idleTimer);
+                    idleTimer = setTimeout(whenUserIdle, idleSeconds * 1000);
+                }
+                attachEvent(document.body, 'mousemove', resetTimer);
+                attachEvent(document.body, 'keydown', resetTimer);
+                attachEvent(document.body, 'click', resetTimer);
 
-            //     resetTimer(); 
-            // });
+                resetTimer(); 
+            });
 
-            // function whenUserIdle() {
-            //     alert("Your session is out");
-            //     window.location.href = '/';
-            // }
+            function whenUserIdle() {
+                alert("Your session is out");
+                window.location.href = '/';
+            }
 
-            // function attachEvent(obj, evt, fnc, useCapture) {
-            //     if (obj.addEventListener) {
-            //         obj.addEventListener(evt, fnc, !!useCapture);
-            //         return true;
-            //     } else if (obj.attachEvent) {
-            //         return obj.attachEvent("on" + evt, fnc);
-            //     }
-            // }
+            function attachEvent(obj, evt, fnc, useCapture) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(evt, fnc, !!useCapture);
+                    return true;
+                } else if (obj.attachEvent) {
+                    return obj.attachEvent("on" + evt, fnc);
+                }
+            }
+
 
             /* ================
                  Sound 
