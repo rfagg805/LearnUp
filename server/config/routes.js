@@ -47,6 +47,11 @@ module.exports = function (app) {
     tiles.getTiles(request, response);
   });
 
+    // Class has ended, render page with message
+    app.get('/end', (request, response) => {
+      response.render('endOfClass');
+    });  
+
   app.post('/login', (request, response) => {
     users.login(request, response);
   });

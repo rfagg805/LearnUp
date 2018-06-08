@@ -349,24 +349,18 @@
             OFFLINE (RED LIGHT)
             ================ */
 
-            function terminateButtonPressed() {
-                $("#class_over").html("Class is over, thank you!");
-                $("#teacher_light").toggleClass('online');
-                $("#teacher_light").addClass('offline');
-            }
-
             $("#terminate").click(() => {
                 socket.emit("terminate", {
                     room: roomName
                 })
-                terminateButtonPressed()
             });
 
             socket.on("terminate_by_teacher", function () {
-                terminateButtonPressed()
+                console.log("teacher has terminated the room");
+                window.location.replace("http://localhost:8000/end");
             });
 
-            socket.on("user disconnected", function () {
+            socket.on("user disconnected", function() {
                 console.log("user disconnected from client side");
                 $("#student_light").removeClass('not_paying_attention');
                 $("#student_light").addClass('offline');
