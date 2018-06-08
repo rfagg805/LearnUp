@@ -120,7 +120,7 @@
         {
             "text": "nk",
             "color": "white"
-        }
+		}
     ],
     "starsleft": [
         {
@@ -146,15 +146,7 @@
             "color": "white"
         },
         {
-            "text": "ff",
-            "color": "white"
-        },
-        {
             "text": "l",
-            "color": "white"
-        },
-        {
-            "text": "ll",
             "color": "white"
         },
         {
@@ -162,15 +154,7 @@
             "color": "white"
         },
         {
-            "text": "ss",
-            "color": "white"
-        },
-        {
             "text": "k",
-            "color": "white"
-        },
-        {
-            "text": "ck",
             "color": "white"
         },
         {
@@ -178,17 +162,36 @@
             "color": "white"
         },
         {
-            "text": "tch",
+            "text": "ge",
+            "color": "white"
+        }
+
+	],
+	"starsright2": [
+		{
+            "text": "ff",
             "color": "white"
         },
-        {
-            "text": "ge",
+		{
+            "text": "ll",
+            "color": "white"
+        },
+		{
+            "text": "ss",
+            "color": "white"
+        },
+		{
+            "text": "ck",
+            "color": "white"
+        },
+		{
+            "text": "tch",
             "color": "white"
         },
         {
             "text": "dge",
             "color": "white"
-        }
+		}
     ],
     "starsbottom": [
         {
@@ -264,7 +267,9 @@
         {
             "text": "o",
             "color": "green"
-        },
+        }
+	],
+	"dipper2": [
         {
             "text": "oy",
             "color": "green"
@@ -284,16 +289,16 @@
         {
             "text": "oo",
             "color": "green"
+		},
+		{
+            "text": "au",
+            "color": "green"
         },
         {
             "text": "aw",
             "color": "green"
-        },
-        {
-            "text": "au",
-            "color": "green"
         }
-    ],
+	],
     "crescent": [
         {
             "text": "or",
@@ -317,6 +322,10 @@
         }
     ],
     "earth": [
+		{
+            "text": "ea",
+            "color": "yellow"
+        },
         {
             "text": "ee",
             "color": "green"
@@ -344,42 +353,38 @@
         {
             "text": "ui",
             "color": "green"
-        },
-        {
-            "text": "ie",
+		},
+		{
+            "text": "igh",
+            "color": "yellow"
+		},
+		{
+            "text": "y",
+            "color": "yellow"
+		},
+		{
+            "text": "ei",
+            "color": "red"
+		},
+		{
+            "text": "ey",
+            "color": "red"
+		},
+		{
+            "text": "eigh",
+            "color": "red"
+		},
+		{
+            "text": "eu",
             "color": "red"
         },
         {
             "text": "ew",
             "color": "red"
         },
-        {
-            "text": "eu",
+		{
+            "text": "ie",
             "color": "red"
-        },
-        {
-            "text": "eigh",
-            "color": "red"
-        },
-        {
-            "text": "ey",
-            "color": "red"
-        },
-        {
-            "text": "ei",
-            "color": "red"
-        },
-        {
-            "text": "y",
-            "color": "yellow"
-        },
-        {
-            "text": "igh",
-            "color": "yellow"
-        },
-        {
-            "text": "ea",
-            "color": "yellow"
         }
     ]
 }
